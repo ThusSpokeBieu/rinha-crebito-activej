@@ -1,0 +1,10 @@
+idea/**
+.settings/**
+.apt_generated_tests/**
+.clasapath
+.factorypath
+.project
+
+**target/**
+
+
