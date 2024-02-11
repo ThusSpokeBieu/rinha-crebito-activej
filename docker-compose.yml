@@ -2,8 +2,7 @@ version: "3.5"
 
 services:
   api01: &api 
-    image: gmessiasc/rinha20241-activej
-    build: .
+    image: gmessiasc/activej-crebito
     hostname: api01
     environment:
       - HOSTNAME=0.0.0.0
