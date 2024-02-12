@@ -24,4 +24,12 @@ public class HttpUtils {
   public static Promise<HttpResponse> handle404() {
     return HttpResponse.ofCode(404).toPromise();
   }
+
+  public static Promise<HttpResponse> isOK() {
+    return HttpResponse.ofCode(200).toPromise();
+  }
+
+  public static Promise<HttpResponse> isWarming() {
+    return HttpResponse.ofCode(503).withBody("calmae que to aqueceno").toPromise();
+  }
 }

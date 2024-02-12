@@ -1,4 +1,14 @@
 
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
 CREATE TABLE IF NOT EXISTS clientes (
 	id SERIAL PRIMARY KEY,
 	limite INTEGER NOT NULL,
@@ -16,9 +26,10 @@ CREATE TABLE IF NOT EXISTS transacoes (
 	realizada_em TIMESTAMP NOT NULL DEFAULT NOW(),
 	CONSTRAINT fk_clientes_transacoes_id
 		FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+    ON DELETE CASCADE
 );
 
-CREATE INDEX idx_transacao ON transacoes (id DESC);
+CREATE INDEX idx_transacao ON transacoes USING btree(cliente_id);
 
 DO $$
 BEGIN
