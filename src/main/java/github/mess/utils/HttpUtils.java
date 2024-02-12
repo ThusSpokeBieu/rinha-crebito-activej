@@ -10,8 +10,6 @@ public class HttpUtils {
   public static final String ID = "id";
 
   public static Promise<HttpResponse> handleError(Throwable e) {
-    e.printStackTrace();
-
     return switch (e) {
       case MalformedDataException $ -> HttpUtils.handle422();
       case IOException $ -> HttpUtils.handle422();
