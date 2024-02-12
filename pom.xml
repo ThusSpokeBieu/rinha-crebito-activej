@@ -110,6 +110,10 @@
               <imageName>crebito-activej</imageName>
               <buildArgs>
                 <buildArg>--no-fallback</buildArg>
+                <buildArg>--gc=G1</buildArg>
+                <buildArg>-Ob</buildArg>
+                <buildArg>-march=native</buildArg>
+                <buildArg>--strict-image-heap</buildArg>
                 <buildArg>--allow-incomplete-classpath</buildArg>
                 <buildArg>-H:ReflectionConfigurationFiles=${project.basedir}/config/reflectionconfig.json
                 </buildArg>
