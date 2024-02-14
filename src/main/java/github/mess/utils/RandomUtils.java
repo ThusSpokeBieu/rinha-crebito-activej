@@ -1,5 +1,8 @@
 package github.mess.utils;
 
+import github.mess.App;
+import io.activej.http.HttpMethod;
+import io.activej.http.HttpRequest;
 import java.security.SecureRandom;
 import java.util.Random;
 
@@ -26,7 +29,7 @@ public class RandomUtils {
     return RANDOM.nextBoolean() ? 'd' : 'c';
   }
 
-  public static byte[] generateRandomJsonBytes() {
+  public static HttpRequest generateRandomRequest() {
     int valor = generateRandomPositiveInt(100000);
     char tipo = generateRandomChar();
     String descricao = generateRandomString(10);
@@ -34,6 +37,40 @@ public class RandomUtils {
     String json =
         String.format(
             "{\"valor\": %d, \"tipo\": \"%c\", \"descricao\": \"%s\"}", valor, tipo, descricao);
-    return json.getBytes();
+    return createRequest(json.getBytes());
+  }
+
+  public static HttpRequest GenerateNotRandomReqD() {
+    String json =
+        String.format(
+            "{\"valor\": %d, \"tipo\": \"%c\", \"descricao\": \"%s\"}", 1, 'd', "validacao");
+    return createRequest(json.getBytes());
+  }
+
+  public static HttpRequest generateNotRandomReqC() {
+    String json =
+        String.format(
+            "{\"valor\": %d, \"tipo\": \"%c\", \"descricao\": \"%s\"}", 1, 'c', "validacao");
+
+    return createRequest(json.getBytes());
+  }
+
+  public static HttpRequest generateOtherNotRandomReqC() {
+    String json =
+        String.format("{\"valor\": %d, \"tipo\": \"%c\", \"descricao\": \"%s\"}", 1, 'c', "toma");
+    return createRequest(json.getBytes());
+  }
+
+  public static HttpRequest generateOtherNotRandomReqD() {
+    String json =
+        String.format(
+            "{\"valor\": %d, \"tipo\": \"%c\", \"descricao\": \"%s\"}", 1, 'd', "devolve");
+    return createRequest(json.getBytes());
+  }
+
+  public static HttpRequest createRequest(byte[] payloadByte) {
+    return HttpRequest.builder(HttpMethod.POST, "http://localhost:8080" + App.PATH_TRANSACAO)
+        .withBody(payloadByte)
+        .build();
   }
 }

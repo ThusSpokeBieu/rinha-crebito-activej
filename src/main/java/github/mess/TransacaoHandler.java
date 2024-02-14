@@ -13,11 +13,11 @@ import java.sql.SQLException;
 
 public class TransacaoHandler {
   private static ThreadLocal<String> ID_STR = ThreadLocal.withInitial(String::new);
-  private static ThreadLocal<Integer> ID = ThreadLocal.withInitial(() -> 0);
-  private static ThreadLocal<Transacao> REQUEST_BODY = ThreadLocal.withInitial(Transacao::new);
+  private static ThreadLocal<Transacao> REQUEST_BODY =
+      ThreadLocal.withInitial(() -> new Transacao(0, "", ""));
   private static ThreadLocal<byte[]> BUFFER = ThreadLocal.withInitial(() -> new byte[1]);
   private static final JsonCodec<Transacao> JSON_CODEC = TransacaoCodec.create();
-  private static final String TRANSACAO_SQL = "SELECT * FROM transacao(?, ?, ?, ?)";
+  private static final String TRANSACAO_SQL = "SELECT * FROM transacao(?, ?, ?::tipo_transacao, ?)";
 
   private final PreparedStatement stmt;
 
@@ -30,17 +30,13 @@ public class TransacaoHandler {
   public Promise<HttpResponse> handleRequest(final HttpRequest request) {
     ID_STR.set(request.getPathParameter(HttpUtils.ID));
     try {
-      ID.set(Integer.parseInt(ID_STR.get()));
-      final int id = ID.get();
+      final int id = Integer.parseInt(ID_STR.get());
       if (id < 1 || id > 5) return HttpUtils.handle404();
       return handlePayload(request, id);
     } catch (NumberFormatException e) {
       return HttpUtils.handle404();
-    } catch (Exception e) {
-      return HttpUtils.handleError(e);
     } finally {
       ID_STR.remove();
-      ID.remove();
     }
   }
 
@@ -67,9 +63,9 @@ public class TransacaoHandler {
   public Promise<HttpResponse> handleTransacao(final Transacao transacao, final int id)
       throws SQLException {
     stmt.setInt(1, id);
-    stmt.setInt(2, transacao.getValor());
-    stmt.setString(3, String.valueOf(transacao.getTipo()));
-    stmt.setString(4, transacao.getDescricao());
+    stmt.setInt(2, transacao.valor());
+    stmt.setString(3, transacao.tipo());
+    stmt.setString(4, transacao.descricao());
 
     ResultSet rs = stmt.executeQuery();
 

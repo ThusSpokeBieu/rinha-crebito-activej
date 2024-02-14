@@ -1,0 +1,17 @@
+FROM ubuntu:jammy
+
+RUN apt-get update && apt-get install -y curl
+
+WORKDIR /work/
+
+RUN chown 1001 /work \
+    && chmod "g+rwX" /work \
+    && chown 1001:root /work
+
+COPY --chown=1001:root target/crebito-activej /work/rinha
+
+EXPOSE 8081 8082
+USER 1001
+
+ENTRYPOINT ./rinha --enable-preview -server --gc=ZGC -Dconfig.http.listenAddresses=$HOSTNAME:$PORT -Dio.netty.buffer.checkBounds=false -Dio.netty.buffer.checkAccessible=false
+
