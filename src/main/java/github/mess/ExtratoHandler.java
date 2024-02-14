@@ -4,19 +4,27 @@ import github.mess.utils.HttpUtils;
 import io.activej.http.HttpRequest;
 import io.activej.http.HttpResponse;
 import io.activej.promise.Promise;
+import io.activej.reactor.AbstractReactive;
+import io.activej.reactor.Reactive;
+import io.activej.reactor.nio.NioReactor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.Executor;
+import javax.sql.DataSource;
 
-public class ExtratoHandler {
+public class ExtratoHandler extends AbstractReactive {
   private static final String EXTRATO_SQL = "SELECT * FROM extrato(?)";
-  private final PreparedStatement stmt;
 
-  public ExtratoHandler(final Connection connection) throws SQLException {
-    this.stmt =
-        connection.prepareCall(
-            EXTRATO_SQL, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+  private final DataSource ds;
+  private final Executor executor;
+
+  public ExtratoHandler(final NioReactor reactor, final DataSource ds, final Executor executor)
+      throws SQLException {
+    super(reactor);
+    this.ds = ds;
+    this.executor = executor;
   }
 
   public Promise<HttpResponse> handleRequest(final HttpRequest request) {
@@ -33,14 +41,23 @@ public class ExtratoHandler {
   }
 
   public Promise<HttpResponse> handleExtrato(final int id) throws SQLException {
-    try {
-      stmt.setInt(1, id);
+    Reactive.checkInReactorThread(this);
 
-      ResultSet rs = stmt.executeQuery();
-      rs.next();
-      return HttpResponse.ok200().withBody(rs.getString(1)).toPromise();
-    } catch (Exception e) {
-      return HttpUtils.handleError(e);
-    }
+    return Promise.ofBlocking(
+        executor,
+        () -> {
+          try (Connection connection = ds.getConnection();
+              PreparedStatement stmt =
+                  connection.prepareStatement(
+                      EXTRATO_SQL, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)) {
+            stmt.setInt(1, id);
+
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return HttpResponse.ok200().withBody(rs.getString(1)).build();
+          } catch (Exception e) {
+            throw e;
+          }
+        });
   }
 }

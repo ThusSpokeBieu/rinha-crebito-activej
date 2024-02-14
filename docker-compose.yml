@@ -5,12 +5,14 @@ services:
   api01: &api 
     image: gmessiasc/activej-crebito-native
     build: 
-      context: .
+      context: . 
       dockerfile: Dockerfile.native
     hostname: api01
     environment:
       - HOSTNAME=0.0.0.0
       - PORT=8081
+      - PG_URL=jdbc:postgresql://localhost/crebito
+      - MAX_POOL=2
     network_mode: host
     volumes: 
        - pg-volume:/var/run/postgresql
@@ -19,9 +21,9 @@ services:
          condition: service_healthy
     deploy:
       resources:
-       limits:
-         cpus: "0.25"
-         memory: "100MB"
+          limits:
+             cpus: "0.25"
+             memory: "100MB"
     healthcheck:
       test: ["CMD", "curl", "-f", "-s", "-o", "/dev/null", "http://localhost:8081/health-check"]
       start_period: 2s
@@ -36,6 +38,8 @@ services:
     environment:
       - HOSTNAME=0.0.0.0
       - PORT=8082
+      - PG_URL=jdbc:postgresql://localhost/crebito
+      - MAX_POOL=2
     depends_on:
       db:
          condition: service_healthy

@@ -11,6 +11,21 @@
   {
     "name": "io.activej.service.ServiceGraphModule",
     "allDeclaredMethods": true
+  },
+  {
+    "name": "io.activej.config.converter.ConfigConverters",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.activej.config.converter.ComplexConfigConverter",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "github.mess.utils.HikariConfigConverter",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
   }
 ]
 

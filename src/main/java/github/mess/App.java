@@ -1,5 +1,7 @@
 package github.mess;
 
+import com.zaxxer.hikari.HikariDataSource;
+import github.mess.utils.HikariConfigConverter;
 import github.mess.utils.HttpUtils;
 import github.mess.utils.RandomUtils;
 import io.activej.config.Config;
@@ -9,11 +11,13 @@ import io.activej.inject.annotation.Provides;
 import io.activej.launcher.Launcher;
 import io.activej.launchers.http.HttpServerLauncher;
 import io.activej.reactor.Reactor;
-import java.io.IOException;
+import io.activej.reactor.nio.NioReactor;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import javax.sql.DataSource;
 
 public class App extends HttpServerLauncher {
 
@@ -23,34 +27,43 @@ public class App extends HttpServerLauncher {
   public boolean IS_WARMING = true;
   public long WARM_UP_TIME = TimeUnit.SECONDS.toMillis(5);
 
-  private Connection connection;
+  private DataSource ds;
   private TransacaoHandler transacaoHandler;
   private ExtratoHandler extratoHandler;
 
   @Provides
-  Connection dataSourcePg(Config config) throws SQLException, IOException {
-    String connectionStr =
-        "jdbc:postgresql:crebito?user=rinha&password=rinha?binaryTransfer=true?preparedStatementCacheQueries=1024?prepareThreshold=1?preparedStatementCacheSizeMiB=240?preferQueryMode=extendedCacheEverything?tcpKeepAlive=true?socketFactory=org.newsclub.net.unix.AFUNIXSocketFactory$FactoryArg&socketFactoryArg=/var/run/postgresql/.s.PGSQL.5432";
-    connection = DriverManager.getConnection(connectionStr);
-    return connection;
+  Executor executor() {
+    return Executors.newCachedThreadPool((task) -> Thread.ofVirtual().unstarted(task));
   }
 
   @Provides
-  ExtratoHandler extratoHandler(Connection connection) throws SQLException {
-    extratoHandler = new ExtratoHandler(connection);
+  DataSource dataSource(Config config) {
+    HikariConfigConverter converter =
+        HikariConfigConverter.builder().withAllowMultiQueries().build();
+
+    ds = new HikariDataSource(config.get(converter, "hikari"));
+    return ds;
+  }
+
+  @Provides
+  ExtratoHandler extratoHandler(NioReactor nioReactor, DataSource ds, Executor executor)
+      throws SQLException {
+    extratoHandler = new ExtratoHandler(nioReactor, ds, executor);
     return extratoHandler;
   }
 
   @Provides
-  TransacaoHandler transacaoHandler(Connection connection) throws SQLException {
-    transacaoHandler = new TransacaoHandler(connection);
+  TransacaoHandler transacaoHandler(NioReactor nioReactor, DataSource ds, Executor executor)
+      throws SQLException {
+    transacaoHandler = new TransacaoHandler(nioReactor, ds, executor);
     return transacaoHandler;
   }
 
   @Provides
-  AsyncServlet servlet(Reactor reactor, ExtratoHandler extratoHandler,
-      TransacaoHandler transacaoHandler) {
-    return RoutingServlet.builder(reactor).with(PATH_EXTRATO, extratoHandler::handleRequest)
+  AsyncServlet servlet(
+      Reactor reactor, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler) {
+    return RoutingServlet.builder(reactor)
+        .with(PATH_EXTRATO, extratoHandler::handleRequest)
         .with(PATH_TRANSACAO, transacaoHandler::handleRequest)
         .with("/health-check", request -> IS_WARMING ? HttpUtils.isWarming() : HttpUtils.isOK())
         .build();
@@ -60,14 +73,19 @@ public class App extends HttpServerLauncher {
   protected void run() throws Exception {
     warmUp();
     Thread.sleep(2000);
-    connection.prepareStatement("SELECT 1").execute();
-    connection.prepareStatement("TRUNCATE transacoes").execute();
-    connection.prepareStatement("UPDATE clientes SET saldo = 0").execute();
-    for (int i = 1; i < 6; i++) {
-      extratoHandler.handleExtrato(i);
+    try (Connection connection = ds.getConnection()) {
+      connection.prepareStatement("SELECT 1").execute();
+      connection.prepareStatement("TRUNCATE transacoes").execute();
+      connection.prepareStatement("UPDATE clientes SET saldo = 0").execute();
+      for (int i = 1; i < 6; i++) {
+        extratoHandler.handleExtrato(i);
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
     System.out.println("🚀🚀 agr tô rodano filé 😎 🔥🔥 🚀🚀");
     IS_WARMING = false;
+
     awaitShutdown();
   }
 
