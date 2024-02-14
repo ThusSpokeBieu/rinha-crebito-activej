@@ -30,7 +30,7 @@ public class App extends HttpServerLauncher {
   @Provides
   Connection dataSourcePg(Config config) throws SQLException, IOException {
     String connectionStr =
-        "jdbc:postgresql://localhost/crebito?user=rinha&password=rinha?binaryTransfer=true?preparedStatementCacheQueries=1024?prepareThreshold=1?preparedStatementCacheSizeMiB=20?preferQueryMode=extendedCacheEverything?tcpKeepAlive=true?socketFactory=org.newsclub.net.unix.AFUNIXSocketFactory$FactoryArg&socketFactoryArg=/var/run/postgresql/.s.PGSQL.5431";
+        "jdbc:postgresql:crebito?user=rinha&password=rinha?binaryTransfer=true?preparedStatementCacheQueries=1024?prepareThreshold=1?preparedStatementCacheSizeMiB=240?preferQueryMode=extendedCacheEverything?tcpKeepAlive=true?socketFactory=org.newsclub.net.unix.AFUNIXSocketFactory$FactoryArg&socketFactoryArg=/var/run/postgresql/.s.PGSQL.5432";
     connection = DriverManager.getConnection(connectionStr);
     return connection;
   }
@@ -48,10 +48,9 @@ public class App extends HttpServerLauncher {
   }
 
   @Provides
-  AsyncServlet servlet(
-      Reactor reactor, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler) {
-    return RoutingServlet.builder(reactor)
-        .with(PATH_EXTRATO, extratoHandler::handleRequest)
+  AsyncServlet servlet(Reactor reactor, ExtratoHandler extratoHandler,
+      TransacaoHandler transacaoHandler) {
+    return RoutingServlet.builder(reactor).with(PATH_EXTRATO, extratoHandler::handleRequest)
         .with(PATH_TRANSACAO, transacaoHandler::handleRequest)
         .with("/health-check", request -> IS_WARMING ? HttpUtils.isWarming() : HttpUtils.isOK())
         .build();

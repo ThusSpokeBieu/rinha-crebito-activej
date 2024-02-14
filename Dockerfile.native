@@ -8,6 +8,8 @@ RUN chown 1001 /work \
     && chmod "g+rwX" /work \
     && chown 1001:root /work
 
+RUN mkdir -p /var/run/postgresql && chown -R 1001:root /var/run/postgresql && chmod -R 770 /var/run/postgresql
+
 COPY --chown=1001:root target/crebito-activej /work/rinha
 
 EXPOSE 8081 8082

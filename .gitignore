@@ -10,3 +10,5 @@ idea/**
 .idea/*
 .classpath
 dependency-reduced-pom.xml
+
+./target/libawt_headless.so
