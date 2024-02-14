@@ -8,6 +8,8 @@ import com.dslplatform.json.JsonWriter;
 import io.activej.json.JsonCodec;
 import io.activej.json.JsonCodecs;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TransacaoCodec {
   private static final TipoCodec tipoCodec = new TipoCodec();
@@ -18,30 +20,39 @@ public class TransacaoCodec {
     return JsonCodecs.ofObject(
         Transacao::new,
         "valor",
-        Transacao::getValor,
+        Transacao::valor,
         integerCodec,
         "tipo",
-        Transacao::getTipo,
+        Transacao::tipo,
         tipoCodec,
         "descricao",
-        Transacao::getDescricao,
+        Transacao::descricao,
         descricaoCodec);
   }
 
-  static class TipoCodec implements JsonCodec<Character> {
+  static class TipoCodec implements JsonCodec<String> {
 
-    @Override
-    public Character read(JsonReader<?> reader) throws IOException {
-      return switch (validateNotNull(reader.readString())) {
-        case "c" -> 'c';
-        case "d" -> 'd';
-        default -> throw reader.newParseError("Tipo deve ser 'c' ou 'd' ");
-      };
+    private static final Map<String, String> tipoMapping = new HashMap<>();
+
+    static {
+      tipoMapping.put("c", "c");
+      tipoMapping.put("d", "d");
     }
 
     @Override
-    public void write(JsonWriter writer, Character value) {
-      writer.writeString(checkNotNull(value).toString());
+    public String read(JsonReader<?> reader) throws IOException {
+      String tipo = reader.readString();
+      String result = tipoMapping.get(tipo);
+      if (result != null) {
+        return result;
+      } else {
+        throw reader.newParseError("Tipo deve ser 'c' ou 'd' ");
+      }
+    }
+
+    @Override
+    public void write(JsonWriter writer, String value) {
+      writer.writeString(checkNotNull(value));
     }
   }
 

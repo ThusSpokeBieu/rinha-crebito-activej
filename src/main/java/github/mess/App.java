@@ -4,8 +4,6 @@ import github.mess.utils.HttpUtils;
 import github.mess.utils.RandomUtils;
 import io.activej.config.Config;
 import io.activej.http.AsyncServlet;
-import io.activej.http.HttpMethod;
-import io.activej.http.HttpRequest;
 import io.activej.http.RoutingServlet;
 import io.activej.inject.annotation.Provides;
 import io.activej.launcher.Launcher;
@@ -15,20 +13,19 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 public class App extends HttpServerLauncher {
 
-  private static final String PATH_EXTRATO = "/clientes/:id/extrato";
-  private static final String PATH_TRANSACAO = "/clientes/:id/transacoes";
+  public static final String PATH_EXTRATO = "/clientes/:id/extrato";
+  public static final String PATH_TRANSACAO = "/clientes/:id/transacoes";
+
+  public boolean IS_WARMING = true;
+  public long WARM_UP_TIME = TimeUnit.SECONDS.toMillis(5);
 
   private Connection connection;
-  private ExtratoHandler extratoHandler;
   private TransacaoHandler transacaoHandler;
-
-  private boolean IS_WARMING = true;
-  private int WARM_UP_TIME = 10;
+  private ExtratoHandler extratoHandler;
 
   @Provides
   Connection dataSourcePg(Config config) throws SQLException, IOException {
@@ -50,9 +47,19 @@ public class App extends HttpServerLauncher {
     return transacaoHandler;
   }
 
+  @Provides
+  AsyncServlet servlet(
+      Reactor reactor, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler) {
+    return RoutingServlet.builder(reactor)
+        .with(PATH_EXTRATO, extratoHandler::handleRequest)
+        .with(PATH_TRANSACAO, transacaoHandler::handleRequest)
+        .with("/health-check", request -> IS_WARMING ? HttpUtils.isWarming() : HttpUtils.isOK())
+        .build();
+  }
+
   @Override
   protected void run() throws Exception {
-    warmup();
+    warmUp();
     Thread.sleep(2000);
     connection.prepareStatement("SELECT 1").execute();
     connection.prepareStatement("TRUNCATE transacoes").execute();
@@ -65,37 +72,28 @@ public class App extends HttpServerLauncher {
     awaitShutdown();
   }
 
-  @Provides
-  AsyncServlet servlet(
-      Reactor reactor, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler) {
-    return RoutingServlet.builder(reactor)
-        .with(PATH_EXTRATO, extratoHandler::handleRequest)
-        .with(PATH_TRANSACAO, transacaoHandler::handleRequest)
-        .with("/healthcheck", request -> IS_WARMING ? HttpUtils.isWarming() : HttpUtils.isOK())
-        .build();
-  }
-
   public static void main(String[] args) throws Exception {
-    System.out.println("calmae meu cumpradi q eu to aqueceno 🥵🥵🥵💦💦");
-    Thread.sleep(2000);
+    System.out.println("calmae meu cumpadi q eu to aqueceno 🥵🥵🥵💦💦");
     Launcher launcher = new App();
     launcher.launch(args);
   }
 
-  void warmup() throws Exception {
+  public void warmUp() {
 
     long startTime = System.currentTimeMillis();
 
-    while (System.currentTimeMillis() - startTime < TimeUnit.SECONDS.toMillis(WARM_UP_TIME)) {
-      int id = ThreadLocalRandom.current().nextInt(6);
-      final var request =
-          HttpRequest.builder(HttpMethod.POST, "http://localhost:8080" + PATH_TRANSACAO)
-              .withBody(RandomUtils.generateRandomJsonBytes())
-              .build();
-
-      transacaoHandler.handlePayload(request, id);
+    while (System.currentTimeMillis() - startTime < WARM_UP_TIME) {
+      int id = RandomUtils.generateRandomPositiveInt(5);
+      transacaoHandler.handlePayload(RandomUtils.generateRandomRequest(), id);
+      transacaoHandler.handlePayload(RandomUtils.GenerateNotRandomReqD(), id);
+      transacaoHandler.handlePayload(RandomUtils.generateNotRandomReqC(), id);
+      transacaoHandler.handlePayload(RandomUtils.GenerateNotRandomReqD(), 1);
+      transacaoHandler.handlePayload(RandomUtils.generateNotRandomReqC(), 1);
+      transacaoHandler.handlePayload(RandomUtils.generateOtherNotRandomReqC(), 1);
+      transacaoHandler.handlePayload(RandomUtils.generateOtherNotRandomReqD(), 1);
 
       try {
+        extratoHandler.handleExtrato(id);
         extratoHandler.handleExtrato(id);
       } catch (SQLException e) {
         e.printStackTrace();
