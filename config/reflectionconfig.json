@@ -1,6 +1,7 @@
 [
   {
     "name": "github.mess.App",
+    "allDeclaredFields": true,
     "allDeclaredMethods": true
   },
   {

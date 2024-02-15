@@ -5,15 +5,19 @@ import github.mess.utils.RandomUtils;
 import io.activej.config.Config;
 import io.activej.http.AsyncServlet;
 import io.activej.http.RoutingServlet;
+import io.activej.inject.annotation.Eager;
+import io.activej.inject.annotation.Inject;
 import io.activej.inject.annotation.Provides;
 import io.activej.launcher.Launcher;
 import io.activej.launchers.http.HttpServerLauncher;
 import io.activej.reactor.Reactor;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import org.postgresql.ds.PGSimpleDataSource;
+import org.postgresql.jdbc.PreferQueryMode;
 
 public class App extends HttpServerLauncher {
 
@@ -23,34 +27,48 @@ public class App extends HttpServerLauncher {
   public boolean IS_WARMING = true;
   public long WARM_UP_TIME = TimeUnit.SECONDS.toMillis(5);
 
-  private Connection connection;
-  private TransacaoHandler transacaoHandler;
-  private ExtratoHandler extratoHandler;
+  @Inject private Connection connection;
+  @Inject private TransacaoHandler transacaoHandler;
+  @Inject private ExtratoHandler extratoHandler;
 
   @Provides
+  @Eager
   Connection dataSourcePg(Config config) throws SQLException, IOException {
-    String connectionStr =
-        "jdbc:postgresql:crebito?user=rinha&password=rinha?binaryTransfer=true?preparedStatementCacheQueries=1024?prepareThreshold=1?preparedStatementCacheSizeMiB=240?preferQueryMode=extendedCacheEverything?tcpKeepAlive=true?socketFactory=org.newsclub.net.unix.AFUNIXSocketFactory$FactoryArg&socketFactoryArg=/var/run/postgresql/.s.PGSQL.5432";
-    connection = DriverManager.getConnection(connectionStr);
-    return connection;
+    PGSimpleDataSource dataSource = new PGSimpleDataSource();
+    dataSource.setDatabaseName("crebito");
+    dataSource.setUser(config.get("pg.user", "rinha"));
+    dataSource.setPassword(config.get("pg.password", "rinha"));
+    dataSource.setBinaryTransfer(true);
+    dataSource.setPreparedStatementCacheQueries(1024);
+    dataSource.setPrepareThreshold(1);
+    dataSource.setPreparedStatementCacheSizeMiB(240);
+    dataSource.setPreferQueryMode(PreferQueryMode.EXTENDED_CACHE_EVERYTHING);
+    dataSource.setTcpKeepAlive(true);
+    dataSource.setSocketFactory("org.newsclub.net.unix.AFUNIXSocketFactory$FactoryArg");
+    dataSource.setSocketFactoryArg("/var/run/postgresql/.s.PGSQL.5432");
+    dataSource.setMaxResultBuffer("100000");
+
+    Connection connection = dataSource.getConnection();
+    return Objects.requireNonNull(connection, "conexão nula com o banco, pq?");
   }
 
   @Provides
   ExtratoHandler extratoHandler(Connection connection) throws SQLException {
     extratoHandler = new ExtratoHandler(connection);
-    return extratoHandler;
+    return Objects.requireNonNull(extratoHandler, "extrato handler n inicializou corretamente");
   }
 
   @Provides
   TransacaoHandler transacaoHandler(Connection connection) throws SQLException {
     transacaoHandler = new TransacaoHandler(connection);
-    return transacaoHandler;
+    return Objects.requireNonNull(transacaoHandler, "transacao handler n inicializou corretamente");
   }
 
   @Provides
-  AsyncServlet servlet(Reactor reactor, ExtratoHandler extratoHandler,
-      TransacaoHandler transacaoHandler) {
-    return RoutingServlet.builder(reactor).with(PATH_EXTRATO, extratoHandler::handleRequest)
+  AsyncServlet servlet(
+      Reactor reactor, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler) {
+    return RoutingServlet.builder(reactor)
+        .with(PATH_EXTRATO, extratoHandler::handleRequest)
         .with(PATH_TRANSACAO, transacaoHandler::handleRequest)
         .with("/health-check", request -> IS_WARMING ? HttpUtils.isWarming() : HttpUtils.isOK())
         .build();

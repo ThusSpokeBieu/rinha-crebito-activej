@@ -24,7 +24,7 @@ public class TransacaoHandler {
   public TransacaoHandler(final Connection connection) throws SQLException {
     this.stmt =
         connection.prepareStatement(
-            TRANSACAO_SQL, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+            TRANSACAO_SQL, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
   }
 
   public Promise<HttpResponse> handleRequest(final HttpRequest request) {

@@ -16,7 +16,7 @@ public class ExtratoHandler {
   public ExtratoHandler(final Connection connection) throws SQLException {
     this.stmt =
         connection.prepareCall(
-            EXTRATO_SQL, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+            EXTRATO_SQL, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
   }
 
   public Promise<HttpResponse> handleRequest(final HttpRequest request) {

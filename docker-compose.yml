@@ -6,12 +6,14 @@ services:
     image: gmessiasc/activej-crebito-native
     build: 
       context: .
-      dockerfile: Dockerfile.native
+        #dockerfile: Dockerfile.native
     hostname: api01
     environment:
       - HOSTNAME=0.0.0.0
-      - PORT=8081
-    network_mode: host
+      - PORT=8080
+    ports: 
+       - "8081:8080"
+        #network_mode: host
     volumes: 
        - pg-volume:/var/run/postgresql
     depends_on:
@@ -21,9 +23,9 @@ services:
       resources:
        limits:
          cpus: "0.25"
-         memory: "100MB"
+         memory: "150MB"
     healthcheck:
-      test: ["CMD", "curl", "-f", "-s", "-o", "/dev/null", "http://localhost:8081/health-check"]
+      test: ["CMD", "curl", "-f", "-s", "-o", "/dev/null", "http://localhost:8080/health-check"]
       start_period: 2s
       interval: 2s
       timeout: 5s
@@ -32,15 +34,17 @@ services:
   api02:
     <<: *api 
     hostname: api02
-    network_mode: host
+      # network_mode: host
     environment:
       - HOSTNAME=0.0.0.0
-      - PORT=8082
+      - PORT=8080
+    ports:
+      - "8082:8080"
     depends_on:
       db:
          condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "-s", "-o", "/dev/null", "http://localhost:8082/health-check"]
+      test: ["CMD", "curl", "-f", "-s", "-o", "/dev/null", "http://localhost:8080/health-check"]
       start_period: 2s
       interval: 2s
       timeout: 5s
@@ -50,13 +54,15 @@ services:
   db:
     image: postgres:latest
     hostname: db
-    network_mode: host
+    ports:
+      - "5432:5432"
+    #network_mode: host
     environment:
       - POSTGRES_PASSWORD=rinha
       - POSTGRES_USER=rinha
       - POSTGRES_DB=crebito
     volumes:
-      - ./postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./postgresql.conf:/docker-entrypoint-initdb.d/postgresql.conf
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - pg-volume:/var/run/postgresql
     healthcheck:
@@ -66,16 +72,18 @@ services:
       start_period: 15s
       start_interval: 2s
       retries: 3
-    command: [ "postgres", "-c", "config_file=/etc/postgresql/postgresql.conf" ]
+    command: [ "postgres", "-c", "config_file=/docker-entrypoint-initdb.d/postgresql.conf" ]
     deploy:
        resources:
          limits:
            cpus: "0.8"
-           memory: "300MB"
+           memory: "230MB"
 
   nginx:
     image: nginx:latest
-    network_mode: host
+    #network_mode: host
+    ports:
+      - "9999:9999"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
@@ -87,7 +95,12 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "50MB"
+          memory: "20MB"
 
 volumes:
   pg-volume: 
+
+networks:
+  default:
+    driver: bridge
+    name: rinha-nginx-2024q1
