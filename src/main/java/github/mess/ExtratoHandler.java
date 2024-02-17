@@ -20,10 +20,8 @@ public class ExtratoHandler {
   }
 
   public Promise<HttpResponse> handleRequest(final HttpRequest request) {
-    final String idStr = request.getPathParameter(HttpUtils.ID);
     try {
-      final int id = Integer.parseInt(idStr);
-      if (id < 1 || id > 5) return HttpUtils.handle404();
+      final int id = Integer.parseInt(request.getPathParameter(HttpUtils.ID));
       return handleExtrato(id);
     } catch (NumberFormatException e) {
       return HttpUtils.handle404();
@@ -38,6 +36,8 @@ public class ExtratoHandler {
 
       ResultSet rs = stmt.executeQuery();
       rs.next();
+
+      if (rs.getString(1) == null) return HttpUtils.handle404();
       return HttpResponse.ok200().withBody(rs.getString(1)).toPromise();
     } catch (Exception e) {
       return HttpUtils.handleError(e);

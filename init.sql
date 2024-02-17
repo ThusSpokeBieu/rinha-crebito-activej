@@ -57,8 +57,11 @@ BEGIN
     FROM
         clientes c
     WHERE
-        c.id = _cliente_id
-    LIMIT 1;
+        c.id = _cliente_id;
+
+    IF NOT FOUND THEN 
+      RETURN NULL;
+    END IF;
 
     SELECT
         CASE
@@ -93,7 +96,6 @@ BEGIN
     );
 END;
 $$ LANGUAGE plpgsql;
-
 
 
 CREATE OR REPLACE FUNCTION transacao(

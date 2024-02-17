@@ -12,10 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TransacaoHandler {
-  private static ThreadLocal<String> ID_STR = ThreadLocal.withInitial(String::new);
-  private static ThreadLocal<Transacao> REQUEST_BODY =
-      ThreadLocal.withInitial(() -> new Transacao(0, "", ""));
-  private static ThreadLocal<byte[]> BUFFER = ThreadLocal.withInitial(() -> new byte[1]);
   private static final JsonCodec<Transacao> JSON_CODEC = TransacaoCodec.create();
   private static final String TRANSACAO_SQL = "SELECT * FROM transacao(?, ?, ?::tipo_transacao, ?)";
 
@@ -28,15 +24,11 @@ public class TransacaoHandler {
   }
 
   public Promise<HttpResponse> handleRequest(final HttpRequest request) {
-    ID_STR.set(request.getPathParameter(HttpUtils.ID));
     try {
-      final int id = Integer.parseInt(ID_STR.get());
-      if (id < 1 || id > 5) return HttpUtils.handle404();
+      final int id = Integer.parseInt(request.getPathParameter(HttpUtils.ID));
       return handlePayload(request, id);
     } catch (NumberFormatException e) {
       return HttpUtils.handle404();
-    } finally {
-      ID_STR.remove();
     }
   }
 
@@ -45,16 +37,11 @@ public class TransacaoHandler {
         .loadBody()
         .then(
             $ -> {
-              BUFFER.set(request.getBody().getArray());
               try {
-                REQUEST_BODY.set(JsonUtils.fromJsonBytes(JSON_CODEC, BUFFER.get()));
-                Transacao transacao = REQUEST_BODY.get();
-                return handleTransacao(transacao, id);
+                return handleTransacao(
+                    JsonUtils.fromJsonBytes(JSON_CODEC, request.getBody().getArray()), id);
               } catch (Exception e) {
                 return HttpUtils.handleError(e);
-              } finally {
-                BUFFER.remove();
-                REQUEST_BODY.remove();
               }
             },
             e -> HttpUtils.handleError(e));
