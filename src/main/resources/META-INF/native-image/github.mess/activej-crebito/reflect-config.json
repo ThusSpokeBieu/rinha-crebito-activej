@@ -1,0 +1,1541 @@
+[
+{
+  "name":"[B"
+},
+{
+  "name":"[J"
+},
+{
+  "name":"[Ljava.lang.StackTraceElement;"
+},
+{
+  "name":"[Ljava.lang.String;"
+},
+{
+  "name":"[Ljava.rmi.server.ObjID;"
+},
+{
+  "name":"[Lsun.security.pkcs.SignerInfo;"
+},
+{
+  "name":"com.kohlschutter.testutil.AvailabilityExecutionCondition",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.kohlschutter.testutil.AvailabilityRequirement",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"com.kohlschutter.testutil.ExecutionEnvironmentExecutionCondition",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.kohlschutter.testutil.ExecutionEnvironmentRequirement",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"com.kohlschutter.testutil.ProcessUtilCondition",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.kohlschutter.testutil.ProcessUtilRequirement",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"com.sun.crypto.provider.AESCipher$General",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.AESKeyGenerator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.ARCFOURCipher",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.ChaCha20Cipher$ChaCha20Poly1305",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.DESCipher",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.DESedeCipher",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.DHParameters",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.GaloisCounterMode$AESGCM",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.HmacCore$HmacSHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.HmacCore$HmacSHA384",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.HmacPKCS12PBECore$HmacPKCS12PBE_SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.PBEKeyFactory$PBEWithMD5AndDES",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.PBES2Core$HmacSHA256AndAES_256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.PBES2Parameters$General",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.crypto.provider.TlsMasterSecretGenerator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.wolfssl.provider.jce.WolfCryptProvider"
+},
+{
+  "name":"com.wolfssl.provider.jsse.WolfSSLProvider"
+},
+{
+  "name":"iaik.security.jsse.provider.IAIKJSSEProvider"
+},
+{
+  "name":"iaik.security.provider.IAIK"
+},
+{
+  "name":"java.io.IOException"
+},
+{
+  "name":"java.lang.Exception"
+},
+{
+  "name":"java.lang.Number"
+},
+{
+  "name":"java.lang.ProcessBuilder$RedirectPipeImpl"
+},
+{
+  "name":"java.lang.String"
+},
+{
+  "name":"java.lang.Thread",
+  "fields":[{"name":"threadLocalRandomProbe"}]
+},
+{
+  "name":"java.lang.Throwable"
+},
+{
+  "name":"java.lang.reflect.Proxy"
+},
+{
+  "name":"java.net.InetSocketAddress"
+},
+{
+  "name":"java.net.UnixDomainSocketAddress"
+},
+{
+  "name":"java.nio.channels.spi.AbstractSelectableChannel"
+},
+{
+  "name":"java.rmi.NoSuchObjectException"
+},
+{
+  "name":"java.rmi.Remote",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"java.rmi.RemoteException"
+},
+{
+  "name":"java.rmi.dgc.Lease"
+},
+{
+  "name":"java.rmi.dgc.VMID"
+},
+{
+  "name":"java.rmi.registry.Registry",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"java.rmi.server.ObjID"
+},
+{
+  "name":"java.rmi.server.RemoteObject"
+},
+{
+  "name":"java.rmi.server.RemoteObjectInvocationHandler"
+},
+{
+  "name":"java.rmi.server.UID"
+},
+{
+  "name":"java.security.AlgorithmParametersSpi"
+},
+{
+  "name":"java.security.KeyStoreSpi"
+},
+{
+  "name":"java.security.SecureRandomParameters"
+},
+{
+  "name":"java.security.cert.CertStoreParameters"
+},
+{
+  "name":"java.security.interfaces.RSAPrivateKey"
+},
+{
+  "name":"java.security.interfaces.RSAPublicKey"
+},
+{
+  "name":"java.util.Collections$EmptyList"
+},
+{
+  "name":"java.util.Date"
+},
+{
+  "name":"java.util.concurrent.ForkJoinTask",
+  "fields":[{"name":"aux"}, {"name":"status"}]
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicBoolean",
+  "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicInteger"
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicReference",
+  "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.concurrent.atomic.Striped64",
+  "fields":[{"name":"base"}, {"name":"cellsBusy"}]
+},
+{
+  "name":"java.util.function.Consumer",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"javax.security.auth.x500.X500Principal",
+  "fields":[{"name":"thisX500Name"}],
+  "methods":[{"name":"<init>","parameterTypes":["sun.security.x509.X500Name"] }]
+},
+{
+  "name":"jdk.internal.misc.Unsafe"
+},
+{
+  "name":"org.apiguardian.api.API",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.bouncycastle.jce.provider.BouncyCastleProvider"
+},
+{
+  "name":"org.bouncycastle.jsse.provider.BouncyCastleJsseProvider"
+},
+{
+  "name":"org.bouncycastle.tls.TlsException"
+},
+{
+  "name":"org.conscrypt.Conscrypt"
+},
+{
+  "name":"org.junit.internal.AssumptionViolatedException"
+},
+{
+  "name":"org.junit.jupiter.api.MethodOrderer$MethodName",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.junit.jupiter.api.Test",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.api.TestMethodOrder",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.api.TestTemplate",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.api.Timeout",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.api.extension.ExtendWith",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.engine.extension.TimeoutInvocationFactory$SingleThreadExecutorResource",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.junit.jupiter.params.ParameterizedTest",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.params.ParameterizedTestExtension",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.junit.jupiter.params.provider.AnnotationBasedArgumentsProvider",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.params.provider.ArgumentsProvider",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.params.provider.ArgumentsSource",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.params.provider.EnumArgumentsProvider",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.junit.jupiter.params.provider.EnumSource",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.jupiter.params.support.AnnotationConsumer",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.junit.platform.commons.annotation.Testable",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.newsclub.lib.junixsocket.common.NarMetadata"
+},
+{
+  "name":"org.newsclub.lib.junixsocket.custom.NarMetadata"
+},
+{
+  "name":"org.newsclub.net.unix.AFGenericSocketAddress",
+  "methods":[{"name":"addressFamily","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFSYSTEMSocketAddress",
+  "methods":[{"name":"addressFamily","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFSocketCapabilityCondition",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFSocketCapabilityRequirement",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.newsclub.net.unix.AFTIPCSocketAddress",
+  "methods":[{"name":"addressFamily","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFTIPCSocketAddressTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testGeneric","parameterTypes":[] }, {"name":"testParseFail","parameterTypes":[] }, {"name":"testSchemesAvailable","parameterTypes":[] }, {"name":"testServiceRangeURI","parameterTypes":[] }, {"name":"testServiceURI","parameterTypes":[] }, {"name":"testSocatString","parameterTypes":[] }, {"name":"testSocketURI","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXSocketAddress",
+  "methods":[{"name":"addressFamily","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXSocketAddressTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testAbstractNamespace","parameterTypes":[] }, {"name":"testCraftDeserialization","parameterTypes":[] }, {"name":"testFileScheme","parameterTypes":[] }, {"name":"testHttpUnix","parameterTypes":[] }, {"name":"testParseURIandBack","parameterTypes":[] }, {"name":"testSchemesAvailable","parameterTypes":[] }, {"name":"testSerialize","parameterTypes":[] }, {"name":"testSocatString","parameterTypes":[] }, {"name":"testURITemplate","parameterTypes":[] }, {"name":"testURITemplateWithPortNumber","parameterTypes":[] }, {"name":"testUnixScheme","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXSocketCredentials"
+},
+{
+  "name":"org.newsclub.net.unix.AFVSOCKSocketAddress",
+  "methods":[{"name":"addressFamily","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AcceptTimeoutTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testAcceptWithoutBindToService","parameterTypes":[] }, {"name":"testCatchTimeout","parameterTypes":[] }, {"name":"testPendingAcceptCloseServerSocketDelayed","parameterTypes":[] }, {"name":"testPendingAcceptCloseServerSocketImmediately","parameterTypes":[] }, {"name":"testTimeoutAfterDelay","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AddressUnavailableSocketException"
+},
+{
+  "name":"org.newsclub.net.unix.AncillaryMessageTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.newsclub.net.unix.AvailableTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testAvailableAtClient","parameterTypes":[] }, {"name":"testAvailableAtServer","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.BrokenPipeSocketException"
+},
+{
+  "name":"org.newsclub.net.unix.BufferOverflowTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"readOutOfBounds","parameterTypes":[] }, {"name":"readUpTo","parameterTypes":[] }, {"name":"setUp","parameterTypes":[] }, {"name":"tearDown","parameterTypes":[] }, {"name":"writeOverflow","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.BuildPropertiesTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testHasProperties","parameterTypes":[] }, {"name":"testNotEmpty","parameterTypes":[] }, {"name":"testResolved","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.CancelAcceptTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"issue6test1","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.ConnectionResetSocketException"
+},
+{
+  "name":"org.newsclub.net.unix.DatagramSocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testBindConnect","parameterTypes":[] }, {"name":"testChannelSendTo","parameterTypes":[] }, {"name":"testPeekTimeout","parameterTypes":[] }, {"name":"testReadTimeout","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.EndOfFileTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"bidirectionalSanity","parameterTypes":[] }, {"name":"clientReadEof","parameterTypes":[] }, {"name":"clientWriteToSocketClosedByClient","parameterTypes":[] }, {"name":"clientWriteToSocketClosedByServer","parameterTypes":[] }, {"name":"serverReadEof","parameterTypes":[] }, {"name":"serverWriteToSocketClosedByClient","parameterTypes":[] }, {"name":"serverWriteToSocketClosedByServer","parameterTypes":[] }, {"name":"setUp","parameterTypes":[] }, {"name":"tearDown","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.FileDescriptorCastTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testAvailableTypes","parameterTypes":[] }, {"name":"testCastAsInteger","parameterTypes":[] }, {"name":"testCastGeneric","parameterTypes":[] }, {"name":"testCastGenericDuplicating","parameterTypes":[] }, {"name":"testCastToServerSocketIsSameType","parameterTypes":[] }, {"name":"testInvalidFileDescriptor","parameterTypes":[] }, {"name":"testPipe","parameterTypes":[] }, {"name":"testRandomAccessFile","parameterTypes":[] }, {"name":"testStdout","parameterTypes":[] }, {"name":"testUnsafeCast","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.InetAddressTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testFromToBytes","parameterTypes":[] }, {"name":"testHostnameString","parameterTypes":[] }, {"name":"testHostnameStringEndsWithJunixSocket","parameterTypes":[] }, {"name":"testIsLoopbackAddress","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.InvalidArgumentSocketException"
+},
+{
+  "name":"org.newsclub.net.unix.NoSuchDeviceSocketException"
+},
+{
+  "name":"org.newsclub.net.unix.OperationNotSupportedSocketException"
+},
+{
+  "name":"org.newsclub.net.unix.PipeTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testPipe","parameterTypes":[] }, {"name":"testPipeRecvHang","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.ReadWriteTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testReceiveDataByteForByteSendByteForByte","parameterTypes":[] }, {"name":"testReceiveDataByteForByteSendWithByteArray","parameterTypes":[] }, {"name":"testReceiveWithByteArraySendByteForByte","parameterTypes":[] }, {"name":"testReceiveWithByteArraySendWithByteArray","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.SelectorTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testCancelSelect","parameterTypes":[] }, {"name":"testClosedSelectorSelect","parameterTypes":[] }, {"name":"testClosedSelectorWakeup","parameterTypes":[] }, {"name":"testConnectionCloseEventualClientDisconnect","parameterTypes":[] }, {"name":"testConnectionCloseEventualClientDisconnectKeepLooping","parameterTypes":[] }, {"name":"testConnectionCloseImmediateClientDisconnect","parameterTypes":[] }, {"name":"testConnectionCloseImmediateClientDisconnectKeepLooping","parameterTypes":[] }, {"name":"testNonBlockingAccept","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.SelftestDiagnosticsHelper",
+  "methods":[{"name":"buildProperties","parameterTypes":[] }, {"name":"initError","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.ServerSocketCloseTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testUnblockAcceptsWithSoTimeout","parameterTypes":[] }, {"name":"testUnblockAcceptsWithoutSoTimeout","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.ServerSocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testBindBadArguments","parameterTypes":[] }, {"name":"testCloseable","parameterTypes":[] }, {"name":"testUnboundServerSocket","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.SoTimeoutTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"issue14Fail","parameterTypes":[] }, {"name":"issue14Pass","parameterTypes":[] }, {"name":"testSocketTimeoutExceptionRead","parameterTypes":[] }, {"name":"testSocketTimeoutExceptionWrite","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.SocketChannelTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testByteBufferWithPositionOffset","parameterTypes":[] }, {"name":"testDoubleBindAddressNotReusable","parameterTypes":[] }, {"name":"testDoubleBindAddressReusable","parameterTypes":[] }, {"name":"testNonBlockingConnect","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.SocketClosedException"
+},
+{
+  "name":"org.newsclub.net.unix.SocketOptionsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.newsclub.net.unix.SocketPairTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testDatagramPair","parameterTypes":[] }, {"name":"testSocketPair","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.SocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testBindBadArguments","parameterTypes":[] }, {"name":"testCloseable","parameterTypes":[] }, {"name":"testConnectBadArguments","parameterTypes":[] }, {"name":"testUnconnectedSocket","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.SocketTestBase",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"ensureSocketFileIsDeleted","parameterTypes":[] }, {"name":"tearDownClass","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.StandardSocketOptionsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"afterEach","parameterTypes":[] }, {"name":"beforeEach","parameterTypes":[] }, {"name":"testSocketOptions","parameterTypes":[] }, {"name":"testUnconnectedServerSocketOptions","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.TcpNoDelayTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testDefaultImpl","parameterTypes":[] }, {"name":"testStrictImpl","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.ThroughputTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testDatagramChannel","parameterTypes":[] }, {"name":"testDatagramChannelDirect","parameterTypes":[] }, {"name":"testDatagramChannelNonBlocking","parameterTypes":[] }, {"name":"testDatagramChannelNonBlockingDirect","parameterTypes":[] }, {"name":"testDatagramPacket","parameterTypes":[] }, {"name":"testSocket","parameterTypes":[] }, {"name":"testSocketChannel","parameterTypes":[] }, {"name":"testSocketChannelDirectBuffer","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.darwin.system.AFSYSTEMSelectorProvider"
+},
+{
+  "name":"org.newsclub.net.unix.darwin.system.KernelControlNamesTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testStandardKernelControlNames","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.darwin.system.UtunTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.AbstractNamespaceTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testBind","parameterTypes":[] }, {"name":"testBindLongAbstractAddress","parameterTypes":[] }, {"name":"testBindTrailingZeroes","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.AcceptTimeoutTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.AvailableTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.BufferOverflowTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.CancelAcceptTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.DatagramSocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testSeqPacket","parameterTypes":[] }, {"name":"testSeqPacketPair","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.EndOfFileTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.FileDescriptorCastTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testDatagramFileChannel","parameterTypes":[] }, {"name":"testDatagramPorts","parameterTypes":[] }, {"name":"testDatagramSocket","parameterTypes":[] }, {"name":"testForkedVMRedirectStdin","parameterTypes":[] }, {"name":"testServer","parameterTypes":[] }, {"name":"testSocketPair","parameterTypes":[] }, {"name":"testSocketPairNative","parameterTypes":[] }, {"name":"testSocketPorts","parameterTypes":[] }, {"name":"testUnconnectedServerAsSocket","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.FileDescriptorsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testAncillaryReceiveBufferTooSmall","parameterTypes":[] }, {"name":"testBadFileDescriptor","parameterTypes":[] }, {"name":"testDatagramSocket","parameterTypes":[] }, {"name":"testEmptyFileDescriptorArray","parameterTypes":[] }, {"name":"testFileInputStream","parameterTypes":[] }, {"name":"testFileInputStreamPartiallyConsumed","parameterTypes":[] }, {"name":"testNoAncillaryReceiveBuffer","parameterTypes":[] }, {"name":"testNullFileDescriptorArray","parameterTypes":[] }, {"name":"testSendRecvFileDescriptors","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.PeerCredentialsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"ensureSameCreds","parameterTypes":[] }, {"name":"testDatagramSocket","parameterTypes":[] }, {"name":"testSocketsSameProcess","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.ReadWriteTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.SelectorTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.ServerSocketCloseTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.ServerSocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testSupported","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.SoTimeoutTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.SocketAddressTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testAbstractNamespace","parameterTypes":[] }, {"name":"testByteConstructor","parameterTypes":[] }, {"name":"testEmptyAddress","parameterTypes":[] }, {"name":"testInetAddress","parameterTypes":[] }, {"name":"testLargePort","parameterTypes":[] }, {"name":"testLegacyConstructor","parameterTypes":[] }, {"name":"testPath","parameterTypes":[] }, {"name":"testPort","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.SocketChannelTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.SocketFactoryTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testFactoryArg","parameterTypes":[] }, {"name":"testSystemProperty","parameterTypes":[] }, {"name":"testURISchemeCeateSocketThenConnect","parameterTypes":[] }, {"name":"testURISchemeCeateSocketWithHostnameValidCases","parameterTypes":[] }, {"name":"testURISchemeCeateSocketWithIllegalArguments","parameterTypes":[] }, {"name":"testURISchemeCeateSocketWithInvalidHostname","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.SocketPairTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.SocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testLoadedLibrary","parameterTypes":[] }, {"name":"testMain","parameterTypes":[] }, {"name":"testReceivedFileDescriptorsUnconnected","parameterTypes":[] }, {"name":"testSupported","parameterTypes":[] }, {"name":"testSupports","parameterTypes":[] }, {"name":"testVersion","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.StandardSocketOptionsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.TcpNoDelayTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.ThroughputTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.ThroughputTestShim",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"testJEP380","parameterTypes":[] }, {"name":"testJEP380direct","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.domain.UnixDomainSocketAddressTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testConvertUnixDomainSocketAddress","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.generic.AFGenericSelectorProvider"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.AFRMIService",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.newsclub.net.unix.rmi.AFRMIServiceImpl_Stub"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.AFRMISocketFactory"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.AFRegistry$1_Stub"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.AFSocketCapabilityCondition",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.AFSocketCapabilityRequirement",
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.newsclub.net.unix.rmi.AFUNIXRMISocketFactory"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.Hello",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"hello","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.HelloImpl_Stub"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.JunixsocketVersionTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testVersion","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.NaiveFileInputStreamRemote",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"close","parameterTypes":[] }, {"name":"getRemoteFileDescriptor","parameterTypes":[] }, {"name":"read","parameterTypes":[] }, {"name":"readAllBytes","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.NaiveFileInputStreamRemoteImpl_Stub"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RMIPeerCredentialsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testRemotePeerCredentials","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RegistryTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testDoubleCreateRegistry","parameterTypes":[] }, {"name":"testExportAndBind","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteCloseable",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"close","parameterTypes":[] }, {"name":"get","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteCloseableImpl_Stub"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteCloseableTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testRemoteCloseableWithACloseableThing","parameterTypes":[] }, {"name":"testRemoteCloseableWithANotCloseableThing","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteCloseableThing$IsCloseable"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteCloseableThing$NotCloseable"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteCloseableThingImpl"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteCloseableThingImpl$IsCloseableImpl"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteCloseableThingImpl$NotCloseableImpl"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteFileDescriptor"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteFileDescriptorBase"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteFileDescriptorTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testFindSocketFactory","parameterTypes":[] }, {"name":"testReadWrite","parameterTypes":[] }, {"name":"testRemoteStdout","parameterTypes":[] }, {"name":"testRemoteStdoutNoop","parameterTypes":[] }, {"name":"testServiceProxy","parameterTypes":[] }, {"name":"testWriteAndReadHello","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteFileInput"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.RemoteFileOutput"
+},
+{
+  "name":"org.newsclub.net.unix.rmi.ShutdownHookTestBase",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"tearDownClass","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.TestBase",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"setUp","parameterTypes":[] }, {"name":"tearDown","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.TestService",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"input","parameterTypes":[] }, {"name":"input","parameterTypes":["long"] }, {"name":"naiveInputStreamRemote","parameterTypes":[] }, {"name":"output","parameterTypes":[] }, {"name":"remoteCloseable","parameterTypes":["java.lang.Class"] }, {"name":"remoteCloseableThingNumberOfCloseCalls","parameterTypes":["java.lang.Class"] }, {"name":"remoteCloseableThingResetNumberOfCloseCalls","parameterTypes":["java.lang.Class"] }, {"name":"remotePeerCredentials","parameterTypes":[] }, {"name":"stdout","parameterTypes":[] }, {"name":"verifyContents","parameterTypes":["byte[]"] }]
+},
+{
+  "name":"org.newsclub.net.unix.rmi.TestServiceImpl_Stub"
+},
+{
+  "name":"org.newsclub.net.unix.ssl.ProviderTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testDumpDefaultProviders","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.ssl.SNIHostnameCaptureTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testSNISuccessExpectDefault_NO_serverNullDefault_NO_clientEmptyDefault_NO","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSNISuccessExpectDefault_NO_serverNullDefault_NO_clientEmptyDefault_YES","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSNISuccessExpectDefault_NO_serverNullDefault_YES_clientEmptyDefault_NO","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSNISuccessExpectDefault_NO_serverNullDefault_YES_clientEmptyDefault_YES","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSNISuccessExpectDefault_YES_serverNullDefault_NO_clientEmptyDefault_NO","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSNISuccessExpectDefault_YES_serverNullDefault_NO_clientEmptyDefault_YES","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSNISuccessExpectDefault_YES_serverNullDefault_YES_clientEmptyDefault_NO","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSNISuccessExpectDefault_YES_serverNullDefault_YES_clientEmptyDefault_YES","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testWonkySSLSocket","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.ssl.SSLContextBuilderTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testBadProtocol","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testBothKeyManagersAndKeyStore","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testBothKeyStoreAndKeyManagers","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testBothTrustManagersAndTrustStore","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testBothTrustStoreAndTrustManagers","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testClientAuthRequired","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testClientAuthRequiredButClientIsNotSendingAKey","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testClientAuthRequiredButClientKeyIsNotTrusted","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testClientHasNoTrustStore","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testDestroyablePasswordSupplier","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testDestroyablePasswordSupplierDestroyed","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testKeyStoreFileNotFound","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testKeyStoreNullPasswordSupplied","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testKeyStoreNullPasswordSupplier","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testKeyStoreNullURL","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testKeyStoreURLNotFound","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testNoClientAuth","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSSLEngineMethods","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testServerAndClientBlindlyTrustAnything","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testServerSocketFactoryMethods","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testServerSocketFactoryMethodsForCodeCoverageOnly","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSocketFactoryMethods","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testSocketFactoryMethodsForCodeCoverageOnly","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testTrustStoreFileNotFound","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testTrustStoreNullPasswordSupplied","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testTrustStoreNullPasswordSupplier","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testTrustStoreNullURL","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testTrustStoreURLNotFound","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testUndestroyablePasswordSupplier","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testUndestroyablePasswordSuppliers","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testWithDefaultParameters1","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testWithDefaultParameters2","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }]
+},
+{
+  "name":"org.newsclub.net.unix.ssl.SSLTestBase",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"afterAll","parameterTypes":[] }, {"name":"beforeAll","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.ssl.ValidatingX509TrustManagerTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testInspectTrustedCertificateExpired","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testInspectTrustedCertificateExpiredNested","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testInspectTrustedCertificateExpiredNestedFilter","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testInspectTrustedCertificateNotExpired","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testInspectTrustedClientCertificate","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testInspectTrustedClientCertificateExpired","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }, {"name":"testInspectTrustedClientCertificateExpiredNested","parameterTypes":["org.newsclub.net.unix.ssl.SSLTestBase$TestSSLConfiguration"] }]
+},
+{
+  "name":"org.newsclub.net.unix.tipc.AFTIPCSelectorProvider"
+},
+{
+  "name":"org.newsclub.net.unix.tipc.AFTIPCTopologyWatcherTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.AcceptTimeoutTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.AncillaryMessageTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.AvailableTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.BufferOverflowTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.CancelAcceptTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.DatagramSocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.EndOfFileTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.ReadWriteTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.SelectorTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.ServerSocketCloseTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.ServerSocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.SoTimeoutTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.SocketChannelTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.SocketOptionsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.SocketPairTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.SocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.StandardSocketOptionsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.TcpNoDelayTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.tipc.ThroughputTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.vsock.AFVSOCKExtensionsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testGetLocalID","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.AFVSOCKSelectorProvider"
+},
+{
+  "name":"org.newsclub.net.unix.vsock.AcceptTimeoutTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testTimeoutAfterDelay","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.AncillaryMessageTest",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.newsclub.net.unix.vsock.AvailableTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.BufferOverflowTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.CancelAcceptTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"issue6test1","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.DatagramSocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true
+},
+{
+  "name":"org.newsclub.net.unix.vsock.EndOfFileTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.ReadWriteTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.SelectorTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testNonBlockingAccept","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.ServerSocketCloseTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.ServerSocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testSupported","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.SoTimeoutTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.SocketChannelTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.SocketOptionsTest",
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"org.newsclub.net.unix.vsock.SocketPairTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.SocketTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testLoadedLibrary","parameterTypes":[] }, {"name":"testMain","parameterTypes":[] }, {"name":"testSupported","parameterTypes":[] }, {"name":"testVersion","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.StandardSocketOptionsTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.TcpNoDelayTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"testDefaultImpl","parameterTypes":[] }, {"name":"testStrictImpl","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.vsock.ThroughputTest",
+  "allDeclaredFields":true,
+  "allDeclaredClasses":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.openjsse.net.ssl.OpenJSSE"
+},
+{
+  "name":"sun.rmi.registry.RegistryImpl_Skel",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.rmi.registry.RegistryImpl_Stub",
+  "methods":[{"name":"<init>","parameterTypes":["java.rmi.server.RemoteRef"] }]
+},
+{
+  "name":"sun.rmi.server.UnicastRef2",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.rmi.transport.DGCImpl_Skel",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.rmi.transport.DGCImpl_Stub",
+  "methods":[{"name":"<init>","parameterTypes":["java.rmi.server.RemoteRef"] }]
+},
+{
+  "name":"sun.security.pkcs12.PKCS12KeyStore",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.pkcs12.PKCS12KeyStore$DualFormatPKCS12",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.DSA$SHA224withDSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.DSA$SHA256withDSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.NativePRNG",
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"<init>","parameterTypes":["java.security.SecureRandomParameters"] }]
+},
+{
+  "name":"sun.security.provider.NativePRNG$NonBlocking",
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"<init>","parameterTypes":["java.security.SecureRandomParameters"] }]
+},
+{
+  "name":"sun.security.provider.SHA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA2$SHA224",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA2$SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA5$SHA384",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA5$SHA512",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.X509Factory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.certpath.CollectionCertStore",
+  "methods":[{"name":"<init>","parameterTypes":["java.security.cert.CertStoreParameters"] }]
+},
+{
+  "name":"sun.security.provider.certpath.SunCertPathBuilder",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.PSSParameters",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSAKeyFactory$Legacy",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSAPSSSignature",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSASignature$SHA224withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSASignature$SHA384withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.KeyManagerFactoryImpl$SunX509",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.SSLContextImpl$DefaultSSLContext",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.SSLContextImpl$TLSContext",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.ssl.TrustManagerFactoryImpl$PKIXFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.util.ObjectIdentifier"
+},
+{
+  "name":"sun.security.x509.AuthorityInfoAccessExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.AuthorityKeyIdentifierExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.BasicConstraintsExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.CRLDistributionPointsExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.CertificateExtensions"
+},
+{
+  "name":"sun.security.x509.CertificatePoliciesExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.ExtendedKeyUsageExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.IssuerAlternativeNameExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.KeyUsageExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.NetscapeCertTypeExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.PrivateKeyUsageExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.SubjectAlternativeNameExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+},
+{
+  "name":"sun.security.x509.SubjectKeyIdentifierExtension",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
+}
+]
