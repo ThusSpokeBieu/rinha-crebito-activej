@@ -6,4 +6,4 @@ RUN apk update && \
 WORKDIR /app
 COPY target/activej-crebito-0.0.1.jar ./
 EXPOSE $PORT
-ENTRYPOINT java --enable-preview -server -XX:+UseNUMA -XX:+UseZGC -Dconfig.http.listenAddresses=$HOSTNAME:$PORT -Dio.netty.buffer.checkBounds=false -Dio.netty.buffer.checkAccessible=false -jar activej-crebito-0.0.1.jar
+ENTRYPOINT java --enable-preview -server -XX:+UseNUMA -XX:+UseZGC -Dconfig.http.listenAddresses=$HOSTNAME:$PORT -XX:+UseStringDeduplication -DsuppressStackTraces=true -Dio.netty.buffer.checkBounds=false -Dio.netty.buffer.checkAccessible=false -jar activej-crebito-0.0.1.jar

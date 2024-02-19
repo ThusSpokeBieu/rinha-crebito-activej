@@ -1,5 +1,3 @@
-CREATE TYPE tipo_transacao AS ENUM ('c', 'd');
-
 CREATE TABLE IF NOT EXISTS clientes (
 	id SERIAL PRIMARY KEY,
 	limite INTEGER NOT NULL,
@@ -7,13 +5,12 @@ CREATE TABLE IF NOT EXISTS clientes (
 );
 
 CREATE INDEX idx_clientes ON clientes USING btree(id);
-CLUSTER clientes USING idx_clientes; 
 
 CREATE TABLE IF NOT EXISTS transacoes (
 	id SERIAL PRIMARY KEY,
 	cliente_id INTEGER NOT NULL,
 	valor INTEGER NOT NULL,
-	tipo tipo_transacao NOT NULL,
+	tipo CHAR NOT NULL,
 	descricao VARCHAR(10) NOT NULL,
 	realizada_em TIMESTAMP NOT NULL DEFAULT NOW(),
 	CONSTRAINT fk_clientes_transacoes_id
@@ -22,7 +19,6 @@ CREATE TABLE IF NOT EXISTS transacoes (
 );
 
 CREATE INDEX idx_transacoes_cliente_id ON transacoes USING btree(cliente_id);
-CLUSTER transacoes USING idx_transacoes_cliente_id;
 
 DO $$
 BEGIN
@@ -101,7 +97,7 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION transacao(
     _cliente_id INTEGER,
     _valor INTEGER,
-    _tipo tipo_transacao,
+    _tipo CHAR,
     _descricao VARCHAR(10),
     OUT codigo_erro SMALLINT,
     OUT resultado JSON

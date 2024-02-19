@@ -1,0 +1,166 @@
+[
+{
+  "name":"java.io.FileDescriptor",
+  "fields":[{"name":"fd"}],
+  "methods":[{"name":"attach","parameterTypes":["java.io.Closeable"] }]
+},
+{
+  "name":"java.lang.Boolean",
+  "methods":[{"name":"getBoolean","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Class",
+  "methods":[{"name":"getName","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.IllegalStateException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.IndexOutOfBoundsException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Integer",
+  "methods":[{"name":"<init>","parameterTypes":["int"] }, {"name":"intValue","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.NullPointerException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Object",
+  "methods":[{"name":"getClass","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.ProcessBuilder$RedirectPipeImpl",
+  "fields":[{"name":"fd"}],
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.ThreadLocal",
+  "methods":[{"name":"get","parameterTypes":[] }]
+},
+{
+  "name":"java.net.DatagramSocket"
+},
+{
+  "name":"java.net.InetSocketAddress",
+  "fields":[{"name":"holder"}],
+  "methods":[{"name":"<init>","parameterTypes":["int"] }]
+},
+{
+  "name":"java.net.InetSocketAddress$InetSocketAddressHolder",
+  "fields":[{"name":"port"}]
+},
+{
+  "name":"java.net.NoRouteToHostException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.net.ServerSocket",
+  "fields":[{"name":"impl"}]
+},
+{
+  "name":"java.net.Socket"
+},
+{
+  "name":"java.net.SocketException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.net.SocketTimeoutException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.nio.channels.ClosedChannelException",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"java.nio.channels.spi.AbstractSelectableChannel",
+  "methods":[{"name":"removeKey","parameterTypes":["java.nio.channels.SelectionKey"] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFGenericServerSocket"
+},
+{
+  "name":"org.newsclub.net.unix.AFSelector$PollFd",
+  "fields":[{"name":"fds"}, {"name":"ops"}, {"name":"rops"}]
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXDatagramSocket"
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXServerSocket"
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXSocket"
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXSocketAddress"
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXSocketCredentials",
+  "fields":[{"name":"gids"}, {"name":"pid"}, {"name":"uid"}]
+},
+{
+  "name":"org.newsclub.net.unix.AddressUnavailableSocketException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.newsclub.net.unix.AncillaryDataSupport",
+  "fields":[{"name":"ancillaryReceiveBuffer"}, {"name":"pendingFileDescriptors"}],
+  "methods":[{"name":"receiveFileDescriptors","parameterTypes":["int[]"] }, {"name":"setTipcDestName","parameterTypes":["int","int","int"] }, {"name":"setTipcErrorInfo","parameterTypes":["int","int"] }]
+},
+{
+  "name":"org.newsclub.net.unix.BrokenPipeSocketException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.newsclub.net.unix.ConnectionResetSocketException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.newsclub.net.unix.InvalidArgumentSocketException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.newsclub.net.unix.NoSuchDeviceSocketException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.newsclub.net.unix.OperationNotSupportedSocketException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.newsclub.net.unix.SocketClosedException",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.newsclub.net.unix.tipc.AFTIPCDatagramSocket"
+},
+{
+  "name":"org.newsclub.net.unix.tipc.AFTIPCGroupRequest",
+  "methods":[{"name":"fromNative","parameterTypes":["int","int","int","int"] }, {"name":"getFlagsValue","parameterTypes":[] }, {"name":"getInstance","parameterTypes":[] }, {"name":"getScopeId","parameterTypes":[] }, {"name":"getType","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.tipc.AFTIPCSocket"
+},
+{
+  "name":"org.newsclub.net.unix.vsock.AFVSOCKDatagramSocket"
+},
+{
+  "name":"org.newsclub.net.unix.vsock.AFVSOCKServerSocket"
+},
+{
+  "name":"org.newsclub.net.unix.vsock.AFVSOCKSocket"
+},
+{
+  "name":"sun.rmi.transport.tcp.TCPTransport",
+  "fields":[{"name":"threadConnectionHandler"}]
+},
+{
+  "name":"sun.rmi.transport.tcp.TCPTransport$ConnectionHandler",
+  "fields":[{"name":"socket"}]
+}
+]

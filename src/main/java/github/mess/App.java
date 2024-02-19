@@ -1,12 +1,12 @@
 package github.mess;
 
+import com.dslplatform.json.DslJson;
 import github.mess.utils.HttpUtils;
 import github.mess.utils.RandomUtils;
 import io.activej.config.Config;
 import io.activej.http.AsyncServlet;
 import io.activej.http.RoutingServlet;
 import io.activej.inject.annotation.Eager;
-import io.activej.inject.annotation.Inject;
 import io.activej.inject.annotation.Provides;
 import io.activej.launcher.Launcher;
 import io.activej.launchers.http.HttpServerLauncher;
@@ -27,9 +27,14 @@ public class App extends HttpServerLauncher {
   public boolean IS_WARMING = true;
   public long WARM_UP_TIME = TimeUnit.SECONDS.toMillis(5);
 
-  @Inject private Connection connection;
-  @Inject private TransacaoHandler transacaoHandler;
-  @Inject private ExtratoHandler extratoHandler;
+  private Connection connection;
+  private TransacaoHandler transacaoHandler;
+  private ExtratoHandler extratoHandler;
+
+  @Provides
+  DslJson<Object> dslJson() {
+    return new DslJson<>();
+  }
 
   @Provides
   @Eager
@@ -48,7 +53,7 @@ public class App extends HttpServerLauncher {
     dataSource.setSocketFactoryArg("/var/run/postgresql/.s.PGSQL.5432");
     dataSource.setMaxResultBuffer("100000");
 
-    Connection connection = dataSource.getConnection();
+    connection = dataSource.getConnection();
     return Objects.requireNonNull(connection, "conexão nula com o banco, pq?");
   }
 
@@ -59,8 +64,9 @@ public class App extends HttpServerLauncher {
   }
 
   @Provides
-  TransacaoHandler transacaoHandler(Connection connection) throws SQLException {
-    transacaoHandler = new TransacaoHandler(connection);
+  TransacaoHandler transacaoHandler(final DslJson<Object> dslJson, Connection connection)
+      throws SQLException {
+    transacaoHandler = new TransacaoHandler(dslJson, connection);
     return Objects.requireNonNull(transacaoHandler, "transacao handler n inicializou corretamente");
   }
 
