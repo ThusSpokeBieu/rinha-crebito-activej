@@ -1,12 +1,12 @@
-CREATE TABLE IF NOT EXISTS clientes (
+CREATE UNLOGGED TABLE IF NOT EXISTS clientes (
 	id SERIAL PRIMARY KEY,
 	limite INTEGER NOT NULL,
-  saldo INTEGER NOT NULL
+  saldo INTEGER NOT NULL 
 );
 
-CREATE INDEX idx_clientes ON clientes USING btree(id);
+CREATE INDEX IF NOT EXISTS idx_clientes ON clientes USING btree(id);
 
-CREATE TABLE IF NOT EXISTS transacoes (
+CREATE UNLOGGED TABLE IF NOT EXISTS transacoes (
 	id SERIAL PRIMARY KEY,
 	cliente_id INTEGER NOT NULL,
 	valor INTEGER NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS transacoes (
     ON DELETE CASCADE
 );
 
-CREATE INDEX idx_transacoes_cliente_id ON transacoes USING btree(cliente_id);
+CREATE INDEX IF NOT EXISTS idx_transacoes_cliente_id ON transacoes USING btree(cliente_id);
 
 DO $$
 BEGIN
@@ -104,44 +104,36 @@ CREATE OR REPLACE FUNCTION transacao(
 )
 RETURNS record AS
 $$
-DECLARE
-    _limite INTEGER;
-    _saldo INTEGER;
 BEGIN
-  BEGIN
-    SELECT limite, saldo INTO _limite, _saldo
-    FROM clientes
-    WHERE id = _cliente_id
-    FOR UPDATE;
-
-    IF NOT FOUND THEN
-        codigo_erro := 1;
-        resultado := NULL;
-        RETURN;
-    ELSE
         IF _tipo = 'c' THEN
             UPDATE clientes 
-            SET saldo = _saldo + _valor 
+            SET saldo = saldo + _valor 
             WHERE id = _cliente_id 
             RETURNING json_build_object('limite', limite, 'saldo', saldo) INTO resultado;
             INSERT INTO transacoes(cliente_id, valor, tipo, descricao)
             VALUES (_cliente_id, _valor, _tipo, _descricao);
             RETURN;
-        ELSEIF _tipo = 'd' AND _saldo - _valor >= -_limite THEN
+        ELSIF _tipo = 'd' THEN
             UPDATE clientes
-            SET saldo = _saldo - _valor
-            WHERE id = _cliente_id
+            SET saldo = saldo - _valor
+            WHERE id = _cliente_id AND saldo - _valor > -limite
             RETURNING json_build_object('limite', limite, 'saldo', saldo) INTO resultado;
-            INSERT INTO transacoes(cliente_id, valor, tipo, descricao)
-            VALUES (_cliente_id, _valor, _tipo, _descricao);
+            
+            IF FOUND THEN 
+              INSERT INTO transacoes(cliente_id, valor, tipo, descricao)
+              VALUES (_cliente_id, _valor, _tipo, _descricao);
+            ELSE 
+              codigo_erro := 2;
+              resultado := NULL;
+            END IF;
+
             RETURN;
         ELSE
             codigo_erro := 2;
             resultado := NULL;
             RETURN;
         END IF;
-    END IF;
-  END;
 END;
 $$
 LANGUAGE plpgsql;
+
