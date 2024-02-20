@@ -15,5 +15,5 @@ COPY --chown=1001:root target/crebito-activej /work/rinha
 EXPOSE 8081 8082
 USER 1001
 
-ENTRYPOINT ./rinha --enable-preview -server --gc=ZGC -XX:+UseNUMA -XX:+UseZGC  -XX:+UseStringDeduplication -DsuppressStackTraces=true -Dconfig.http.listenAddresses=$HOSTNAME:$PORT -Dio.netty.buffer.checkBounds=false -Dio.netty.buffer.checkAccessible=false
+ENTRYPOINT ./rinha --enable-preview -server --gc=ZGC -DsuppressStackTraces=true -Dconfig.http.listenAddresses=$HOSTNAME:$PORT -Dio.netty.buffer.checkBounds=false -Dio.netty.buffer.checkAccessible=false
 

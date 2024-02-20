@@ -6,7 +6,7 @@ services:
     image: gmessiasc/activej-crebito-native
     build: 
       context: .
-        #dockerfile: Dockerfile.native
+      dockerfile: Dockerfile.native
     hostname: api01
     environment:
       - HOSTNAME=0.0.0.0
@@ -20,8 +20,8 @@ services:
     deploy:
       resources:
        limits:
-         cpus: "0.35"
-         memory: "165MB"
+         cpus: "0.2"
+         memory: "100MB"
     healthcheck:
       test: ["CMD", "curl", "-f", "-s", "-o", "/dev/null", "http://localhost:8081/health-check"]
       start_period: 2s
@@ -70,8 +70,8 @@ services:
     deploy:
        resources:
          limits:
-           cpus: "0.6"
-           memory: "190MB"
+           cpus: "0.9"
+           memory: "330MB"
 
   nginx:
     image: nginx:latest

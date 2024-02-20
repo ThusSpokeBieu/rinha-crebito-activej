@@ -372,6 +372,18 @@
   "name":"org.newsclub.net.unix.AFUNIXSocketCredentials"
 },
 {
+  "name":"org.newsclub.net.unix.AFUNIXSocketFactory$FactoryArg",
+  "methods":[{"name":"<init>","parameterTypes":["java.io.File"] }, {"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXSocketFactory$SystemProperty",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.newsclub.net.unix.AFUNIXSocketFactory$URIScheme",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"org.newsclub.net.unix.AFVSOCKSocketAddress",
   "methods":[{"name":"addressFamily","parameterTypes":[] }]
 },
