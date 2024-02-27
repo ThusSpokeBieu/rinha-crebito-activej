@@ -1,18 +1,22 @@
 package github.mess;
 
-import com.dslplatform.json.CompiledJson;
+import java.util.HashMap;
+import java.util.Map;
 
-@CompiledJson
-public class Transacao {
-  public int valor;
-  public String tipo;
-  public String descricao;
+public record Transacao(int valor, String tipo, String descricao) {
 
-  public Transacao() {}
+  private static final Map<String, String> tipoMapping = new HashMap<>();
 
-  public Transacao(final int valor, final String tipo, final String descricao) {
-    this.valor = valor;
-    this.tipo = tipo;
-    this.descricao = descricao;
+  static {
+    tipoMapping.put("c", "c");
+    tipoMapping.put("d", "d");
   }
+
+  public boolean isValid() {
+    if (tipoMapping.get(this.tipo) == null || this.descricao == null || this.descricao.isBlank()
+        || this.descricao.length() > 10)
+      return false;
+    return true;
+  }
+
 }

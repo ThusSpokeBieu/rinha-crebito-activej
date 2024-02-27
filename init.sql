@@ -112,7 +112,6 @@ BEGIN
             RETURNING json_build_object('limite', limite, 'saldo', saldo) INTO resultado;
             INSERT INTO transacoes(cliente_id, valor, tipo, descricao)
             VALUES (_cliente_id, _valor, _tipo, _descricao);
-            RETURN;
         ELSIF _tipo = 'd' THEN
             UPDATE clientes
             SET saldo = saldo - _valor
@@ -126,14 +125,16 @@ BEGIN
               codigo_erro := 2;
               resultado := NULL;
             END IF;
-
-            RETURN;
         ELSE
             codigo_erro := 2;
             resultado := NULL;
-            RETURN;
         END IF;
 END;
 $$
 LANGUAGE plpgsql;
 
+CREATE EXTENSION IF NOT EXISTS pg_prewarm;
+SELECT pg_prewarm('clientes');
+SELECT pg_prewarm('transacoes');
+SELECT pg_prewarm('idx_clientes');
+SELECT pg_prewarm('idx_transacoes_cliente_id');

@@ -1,4 +1,4 @@
-package github.mess;
+package github.mess.handlers;
 
 import github.mess.utils.HttpUtils;
 import io.activej.http.HttpRequest;
