@@ -5,7 +5,7 @@
     "allDeclaredMethods": true
   },
   {
-    "name": "io.activej.launchers.http.MultithreadedHttpServerLauncher",
+    "name": "io.activej.launchers.http.HttpServerLauncher",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
   },

@@ -2,28 +2,28 @@ package github.mess;
 
 import github.mess.handlers.ExtratoHandler;
 import github.mess.handlers.TransacaoHandler;
-import github.mess.handlers.WarmUp;
-import github.mess.utils.HttpUtils;
 import io.activej.http.AsyncServlet;
-import io.activej.http.RoutingServlet;
+import io.activej.http.HttpResponse;
 import io.activej.inject.annotation.Provides;
 import io.activej.launcher.Launcher;
-import io.activej.launchers.http.MultithreadedHttpServerLauncher;
+import io.activej.launchers.http.HttpServerLauncher;
 import io.activej.reactor.nio.NioReactor;
-import io.activej.worker.annotation.Worker;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.postgresql.ds.PGSimpleDataSource;
 import org.postgresql.jdbc.PreferQueryMode;
 
-public class App extends MultithreadedHttpServerLauncher {
+public class App extends HttpServerLauncher {
+  private static final Pattern PATH_REGEX =
+      Pattern.compile("/clientes/([1-5])/(extrato|transacoes)");
 
-  public static final String PATH_EXTRATO = "/clientes/:id/extrato";
-  public static final String PATH_TRANSACAO = "/clientes/:id/transacoes";
+  public static final String PATH_EXTRATO = "extrato";
+  public static final String PATH_TRANSACAO = "transacoes";
 
   @Provides
-  @Worker
   Connection connection() throws SQLException, IOException {
     PGSimpleDataSource dataSource = new PGSimpleDataSource();
     dataSource.setDatabaseName("crebito");
@@ -43,45 +43,37 @@ public class App extends MultithreadedHttpServerLauncher {
   }
 
   @Provides
-  @Worker
   ExtratoHandler extratoHandler(Connection connection) throws SQLException {
     return new ExtratoHandler(connection);
   }
 
   @Provides
-  @Worker
   TransacaoHandler transacaoHandler(Connection connection) throws SQLException {
     return new TransacaoHandler(connection);
   }
 
   @Provides
-  @Worker
-  WarmUp warmUp(
-      Connection connection, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler)
-      throws Exception {
-    var warmUp = new WarmUp(connection, transacaoHandler, extratoHandler);
-    warmUp.warmUp();
-    warmUp.prepare();
-    return warmUp;
-  }
-
-  @Provides
-  @Worker
   AsyncServlet servlet(
       NioReactor reactor, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler) {
-    return RoutingServlet.builder(reactor)
-        .with(PATH_EXTRATO, extratoHandler::handleRequest)
-        .with(PATH_TRANSACAO, transacaoHandler::handleRequest)
-        .with(
-            "/health-check",
-            request -> WarmUp.IS_WARMING ? HttpUtils.isWarming() : HttpUtils.isOK())
-        .build();
+    return request -> {
+      Matcher matcher = PATH_REGEX.matcher(request.getPath());
+      boolean isValidPath = matcher.matches();
+      if (!isValidPath) return HttpResponse.notFound404().toPromise();
+
+      int id = Integer.parseInt(matcher.group(1));
+
+      return switch (matcher.group(2)) {
+        case PATH_EXTRATO -> extratoHandler.handleExtrato(id);
+        case PATH_TRANSACAO ->
+            request.loadBody().then(buffer -> transacaoHandler.handleTransacao(buffer, id));
+        default -> HttpResponse.notFound404().toPromise();
+      };
+    };
   }
 
   @Override
   protected void run() throws Exception {
     System.out.println("🚀🚀 agr tô rodano filé 😎 🔥🔥 🚀🚀");
-    WarmUp.IS_WARMING = false;
     awaitShutdown();
   }
 

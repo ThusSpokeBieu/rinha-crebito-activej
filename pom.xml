@@ -126,7 +126,7 @@
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--gc=G1</buildArg>
                 <buildArg>-O3</buildArg>
-                <buildArg>-march=native</buildArg>
+                <buildArg>-march=skylake-avx512</buildArg>
                 <buildArg>-H:ReflectionConfigurationFiles=${project.basedir}/config/reflectionconfig.json
                 </buildArg>
               </buildArgs>
