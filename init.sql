@@ -99,7 +99,7 @@ CREATE OR REPLACE FUNCTION transacao(
     _valor INTEGER,
     _tipo CHAR,
     _descricao VARCHAR(10),
-    OUT codigo_erro SMALLINT,
+    OUT status SMALLINT,
     OUT resultado JSON
 )
 RETURNS record AS
@@ -112,6 +112,7 @@ BEGIN
             RETURNING json_build_object('limite', limite, 'saldo', saldo) INTO resultado;
             INSERT INTO transacoes(cliente_id, valor, tipo, descricao)
             VALUES (_cliente_id, _valor, _tipo, _descricao);
+            status := 200;
         ELSIF _tipo = 'd' THEN
             UPDATE clientes
             SET saldo = saldo - _valor
@@ -121,13 +122,14 @@ BEGIN
             IF FOUND THEN 
               INSERT INTO transacoes(cliente_id, valor, tipo, descricao)
               VALUES (_cliente_id, _valor, _tipo, _descricao);
+              status := 200;
             ELSE 
-              codigo_erro := 2;
-              resultado := NULL;
+              status := 422;
+              resultado := '';
             END IF;
         ELSE
-            codigo_erro := 2;
-            resultado := NULL;
+            status := 422;
+            resultado := '';
         END IF;
 END;
 $$

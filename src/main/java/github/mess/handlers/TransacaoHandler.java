@@ -6,7 +6,6 @@ import github.mess.utils.HttpUtils;
 import io.activej.bytebuf.ByteBuf;
 import io.activej.common.collection.Try;
 import io.activej.common.function.SupplierEx;
-import io.activej.common.tuple.Tuple2;
 import io.activej.http.HttpRequest;
 import io.activej.http.HttpResponse;
 import io.activej.json.JsonUtils;
@@ -37,8 +36,7 @@ public class TransacaoHandler {
     return request
         .loadBody()
         .map(this::desserializeTransacao)
-        .map(transacao -> handleTransacao(transacao, id))
-        .then(this::handleResponse);
+        .then(transacao -> handleTransacao(transacao, id));
   }
 
   private Transacao desserializeTransacao(final ByteBuf body) {
@@ -52,9 +50,9 @@ public class TransacaoHandler {
     }
   }
 
-  public Tuple2<Integer, String> handleTransacao(final Transacao transacao, final int id) {
+  public Promise<HttpResponse> handleTransacao(final Transacao transacao, final int id) {
     try {
-      if (transacao == null) return null;
+      if (transacao == null) return HttpUtils.handle422();
 
       stmt.setInt(1, id);
       stmt.setInt(2, transacao.valor());
@@ -64,19 +62,9 @@ public class TransacaoHandler {
       ResultSet rs = stmt.executeQuery();
       rs.next();
 
-      return new Tuple2<>(rs.getInt(1), rs.getString(2));
+      return HttpResponse.ofCode(rs.getInt(1)).withBody(rs.getString(2)).toPromise();
     } catch (Exception e) {
-      return null;
+      return HttpUtils.handle422();
     }
-  }
-
-  public Promise<HttpResponse> handleResponse(final Tuple2<Integer, String> result) {
-    if (result == null) return HttpUtils.handle422();
-
-    return switch (result.value1()) {
-      case 1 -> HttpUtils.handle404();
-      case 2 -> HttpUtils.handle422();
-      default -> HttpResponse.ok200().withBody(result.value2()).toPromise();
-    };
   }
 }

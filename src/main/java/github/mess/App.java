@@ -8,20 +8,22 @@ import io.activej.http.AsyncServlet;
 import io.activej.http.RoutingServlet;
 import io.activej.inject.annotation.Provides;
 import io.activej.launcher.Launcher;
-import io.activej.launchers.http.HttpServerLauncher;
+import io.activej.launchers.http.MultithreadedHttpServerLauncher;
 import io.activej.reactor.nio.NioReactor;
+import io.activej.worker.annotation.Worker;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import org.postgresql.ds.PGSimpleDataSource;
 import org.postgresql.jdbc.PreferQueryMode;
 
-public class App extends HttpServerLauncher {
+public class App extends MultithreadedHttpServerLauncher {
 
   public static final String PATH_EXTRATO = "/clientes/:id/extrato";
   public static final String PATH_TRANSACAO = "/clientes/:id/transacoes";
 
   @Provides
+  @Worker
   Connection connection() throws SQLException, IOException {
     PGSimpleDataSource dataSource = new PGSimpleDataSource();
     dataSource.setDatabaseName("crebito");
@@ -41,16 +43,19 @@ public class App extends HttpServerLauncher {
   }
 
   @Provides
+  @Worker
   ExtratoHandler extratoHandler(Connection connection) throws SQLException {
     return new ExtratoHandler(connection);
   }
 
   @Provides
+  @Worker
   TransacaoHandler transacaoHandler(Connection connection) throws SQLException {
     return new TransacaoHandler(connection);
   }
 
   @Provides
+  @Worker
   WarmUp warmUp(
       Connection connection, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler)
       throws Exception {
@@ -61,6 +66,7 @@ public class App extends HttpServerLauncher {
   }
 
   @Provides
+  @Worker
   AsyncServlet servlet(
       NioReactor reactor, ExtratoHandler extratoHandler, TransacaoHandler transacaoHandler) {
     return RoutingServlet.builder(reactor)
